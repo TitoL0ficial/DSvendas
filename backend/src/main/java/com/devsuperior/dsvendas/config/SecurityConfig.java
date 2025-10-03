@@ -22,7 +22,7 @@ public class SecurityConfig {
 	private Environment env;
 
 	@Bean
-	SecurityFilterChain securityFilterChanin(HttpSecurity http) throws Exception {
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
 			http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
 		}
